@@ -44,15 +44,22 @@ fetch('https://jsonplaceholder.typicode.com/users')
 } 
 function printData(data){
     const lista=document.getElementById("lista")
+    
+    let bigCities = cities.filter(function (e) {
+    return e.population > 3000000;
+});
 
+console.log(bigCities);
     for (const user of data){
         
+       
         //console.log(user.id + " - "+ user.name)
         
         const li=document.createElement("li")
         const a=document.createElement("a")
         
         a.textContent= user.name //usamos la variable user que para algo esta, junto con lo que queremos definir
+       
         //concat1
         //a.href=`http://${user.website}`
         //concat2
