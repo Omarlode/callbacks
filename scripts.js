@@ -4,8 +4,9 @@ btRequest.addEventListener('click', () => {
 onRequest()
 })
 
-/* funcion sincrona (recordar el llamada/nombre Id de cada elemento) 
-function onRequest() {
+/* funcion sincrona (recordar el llamada/nombre Id de cada elemento)*/ 
+
+/* function onRequest2() {
 fetch('https://jsonplaceholder.typicode.com/users')
 .then(response => {
     if (!response.ok) {
@@ -15,19 +16,19 @@ fetch('https://jsonplaceholder.typicode.com/users')
     return response.json()
     })
 
-.then(data => { */
-/*  console.log(data)
+.then(data => { 
+    console.log(data)
     console.log(data[0].id + " - "+ data[0].name)
     for (const user of data){
         console.log(user.id + " - "+ user.name)
     }
-}) */
+}) 
 //solo en el caso de sacar objeto en arrays
 
-/* .catch(error => {
+ .catch(error => {
     console.log(error)
 });
-} */
+}  */
 
  async function onRequest() {
     try {
@@ -44,30 +45,33 @@ fetch('https://jsonplaceholder.typicode.com/users')
 } 
 function printData(data){
     const lista=document.getElementById("lista")
-    
-    let bigCities = cities.filter(function (e) {
-    return e.population > 3000000;
-});
 
-console.log(bigCities);
+    //lista.innerHTML="" //Evita que se repitan(pero y si quiero que salgan 10 nuevos nombres debajo? o encima?)
+    
+   
+
     for (const user of data){
-        
        
         //console.log(user.id + " - "+ user.name)
         
         const li=document.createElement("li")
         const a=document.createElement("a")
         
-        a.textContent= user.name //usamos la variable user que para algo esta, junto con lo que queremos definir
-       
-        //concat1
+          //concat1
         //a.href=`http://${user.website}`
         //concat2
         a.href="http://" + user.website
 
+        a.textContent= user.name //usamos la variable user que para algo esta, junto con lo que queremos definir
+
         li.appendChild(a)
         lista.appendChild(li)
-        
-    }
 
+     
+       /*  const norepes = user.filter(names=>{
+            console.log(names)
+           // return names!=names
+        }) */
+    }
+   
 }
