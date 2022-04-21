@@ -43,13 +43,15 @@ fetch('https://jsonplaceholder.typicode.com/users')
         console.log(error)
     }
 } 
+  const norepes = users.filter((user)=>{
+
+  })
+
 function printData(data){
     const lista=document.getElementById("lista")
 
     //lista.innerHTML="" //Evita que se repitan(pero y si quiero que salgan 10 nuevos nombres debajo? o encima?)
     
-   
-
     for (const user of data){
        
         //console.log(user.id + " - "+ user.name)
@@ -68,10 +70,7 @@ function printData(data){
         lista.appendChild(li)
 
      
-       /*  const norepes = user.filter(names=>{
-            console.log(names)
-           // return names!=names
-        }) */
+       
     }
    
 }
