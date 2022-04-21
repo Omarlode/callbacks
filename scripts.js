@@ -43,20 +43,24 @@ fetch('https://jsonplaceholder.typicode.com/users')
         console.log(error)
     }
 } 
-  const norepes = users.filter((user)=>{
 
-  })
-
+let userTemporal=[]
 function printData(data){
+    
     const lista=document.getElementById("lista")
 
-    //lista.innerHTML="" //Evita que se repitan(pero y si quiero que salgan 10 nuevos nombres debajo? o encima?)
-    
+    //lista.innerHTML="" //Evita que se repitan(pero y si quiero que salgan 10 nuevos nombres debajo? o encima?)solucion1
+    //filter es la muerte aqui lol
+
+
+
     for (const user of data){
        
         //console.log(user.id + " - "+ user.name)
-        
-        const li=document.createElement("li")
+        const norepes = userTemporal.find(newuser =>newuser.id != user.id )
+        //console.log(norepes)
+        if (!norepes){
+            const li=document.createElement("li")
         const a=document.createElement("a")
         
           //concat1
@@ -67,10 +71,13 @@ function printData(data){
         a.textContent= user.name //usamos la variable user que para algo esta, junto con lo que queremos definir
 
         li.appendChild(a)
-        lista.appendChild(li)
+        lista.appendChild(li) 
+        }
+       
 
      
        
     }
+    userTemporal=data
    
 }
