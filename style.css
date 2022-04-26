@@ -1,44 +1,43 @@
 .loader {
-    display: inline-block;
-    width: 80px;
-    height: 80px;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
 }
 .loader:after {
-    content: " ";
-    display: block;
-    width: 64px;
-    height: 64px;
-    margin: 8px;
-    border-radius: 50%;
-    border: 6px solid rgb(0, 0, 0);
-    border-color: #fff transparent #fff transparent;
-    animation: loader 1.2s linear infinite; /*importante cambiar el nombre d animacion*/
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid rgb(0, 0, 0);
+  border-color: #fff transparent #fff transparent;
+  animation: loader 1.2s linear infinite; /*importante cambiar el nombre d animacion*/
 }
 @keyframes loader {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
-body{
-      background-color: rgb(80, 77, 77);
+body {
+  background-color: rgb(80, 77, 77);
 }
-.btn2{
-    color:white;
-    text-decoration: none ;
-    padding: 10px 15px;
-    display: inline-block;
-    border-radius: 5px;
-    margin : 0 10px;
-    background-color: aqua;
-    transition: 0.3s;
-    height: auto;
-    border:none;
-    text-align: center;
-    vertical-align: middle;
-    
+.btn2 {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: inline-block;
+  border-radius: 5px;
+  margin: 0 10px;
+  background-color: aqua;
+  transition: 0.3s;
+  height: auto;
+  border: none;
+  text-align: center;
+  vertical-align: middle;
 }
 
 input[type="text"],
@@ -52,8 +51,52 @@ textarea {
   margin-top: 6px;
   margin-bottom: 16px;
 }
-.container{
-  margin: auto;
-  width: 1000px;
+.container {
+  width: 1024px;
+  margin: 0 auto;
+  overflow: auto;
 }
-  
+.celda {
+  width: 300px;
+  border: 15px solid green;
+  margin: auto;
+  align-content: center;
+  align-items: left;
+  flex-wrap: wrap;
+  display: flex;
+}
+.celda:hover {
+  background-color: beige;
+}
+.image {
+  position: relative;
+  bottom: 0;
+  right: 7%;
+  border: 3px solid #73ad21;
+  float: left;
+}
+
+.usuario {
+  border-style: solid;
+  border-color: black;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  display: flex;
+  float: left;
+  width: 33.33%; /* three containers (use 25% for four, and 50% for two, etc) */
+  padding: 5px;
+  margin: 10px;
+  align-content: center;
+  align-items: center;
+}
+.usuario:hover {
+  background-color: #ccc;
+}
+.foto {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  float: inline-end;
+}

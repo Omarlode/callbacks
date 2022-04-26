@@ -1,8 +1,6 @@
 const btRequest = document.getElementById('btRequest')
-
-btRequest.addEventListener('click', () => {
 onRequest()
-})
+
 
 /* funcion sincrona (recordar el llamada/nombre Id de cada elemento)*/ 
 
@@ -48,6 +46,7 @@ let userTemporal=[]
 function printData(data){
     
     const lista=document.getElementById("lista")
+    const container=document.getElementById("container")
 
     //lista.innerHTML="" //Evita que se repitan(pero y si quiero que salgan 10 nuevos nombres debajo? o encima?)solucion1
     //filter es la muerte aqui lol
@@ -60,18 +59,33 @@ function printData(data){
         const norepes = userTemporal.find(newuser =>newuser.id != user.id )
         //console.log(norepes)
         if (!norepes){
-            const li=document.createElement("li")
-        const a=document.createElement("a")
-        
-          //concat1
+            //const li=document.createElement("li")
+            const a=document.createElement("a")
+            const img=document.createElement("img")
+            const p=document.createElement("p")
+            const p2=document.createElement("p")
+            const div=document.createElement("div")
+            
+            div.classList.add("celda")
+            img.classList.add("image")
+
+            //concat1
         //a.href=`http://${user.website}`
-        //concat2
-        a.href="http://" + user.website
+            //concat2
+            a.href="http://" + user.website
+            img.src="https://picsum.photos/200"
 
-        a.textContent= user.name //usamos la variable user que para algo esta, junto con lo que queremos definir
-
-        li.appendChild(a)
-        lista.appendChild(li) 
+            p.textContent= user.name
+            p2.textContent= user.company.catchPhrase
+            a.textContent= user.website //usamos la variable user que para algo esta, junto con lo que queremos definir
+            
+            div.appendChild(img)
+            div.appendChild(p)
+            div.appendChild(p2)
+            div.appendChild(a)
+            //div.appendChild(div)
+            container.appendChild(div)
+            lista.appendChild(container)
         }
        
 
