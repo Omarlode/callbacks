@@ -55,6 +55,7 @@ textarea {
   width: 1024px;
   margin: 0 auto;
   overflow: auto;
+  text-decoration: none;
 }
 .celda {
   width: 300px;
@@ -89,6 +90,7 @@ textarea {
   margin: 10px;
   align-content: center;
   align-items: center;
+  color: black;
 }
 .usuario:hover {
   background-color: #ccc;

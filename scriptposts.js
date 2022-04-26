@@ -87,6 +87,13 @@ function printData(posts) {
     const pname = document.createElement("p");
     const div = document.createElement("div");
 
+    const a = document.createElement("a");
+    //camelcase
+    //forma 1
+    a.href = "comentarios.html?postId=" + post.id;
+    //forma2
+    a.href = `comentarios.html?postId=${post.id}`;
+
     div.classList.add("usuario");
     img.classList.add("foto");
 
@@ -97,6 +104,7 @@ function printData(posts) {
     div.appendChild(p);
     div.appendChild(img);
     div.appendChild(pname);
-    container.appendChild(div);
+    a.appendChild(div);
+    container.appendChild(a);
   }
 }
