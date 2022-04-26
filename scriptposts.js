@@ -73,7 +73,7 @@ async function onRequest() {
     console.log(error);
   }
 }
-let userTemporal = [];
+
 function printData(posts) {
   posts.sort(() => Math.random() - 0.5);
   //posts = shuffle(posts);
